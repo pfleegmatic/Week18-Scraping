@@ -1,8 +1,8 @@
 // require mongoose
 var mongoose = require('mongoose');
 
-// Require bluebird as promise because mongoose promises are deprecated
-// this was in 8.3, last activity
+// Add require bluebird as promise because mongoose promises are deprecated
+// still had error when running program
 var Promise = require('bluebird');
 mongoose.Promise = Promise;
 
