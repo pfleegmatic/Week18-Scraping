@@ -7,9 +7,31 @@ var Promise = require('bluebird');
 mongoose.Promise = Promise;
 
 // make the connection
-mongoose.connect("mongodb://localhost/scraping" {
-	useMongoClient: true
-});
+//====================================
+//Connect w/ Heroku - Database configuration with Mongoose
+//=====================================
+var databaseUri = 'mongodb://localhost/scraping';
+if (process.env.MONGODB_URI) {
+	mongoose.connect(process.env.MONGODB_URI);
+} else {
+	mongoose.connect(databaseUri);
+}
+//=====================================
+//end of Heroku database config
+//=====================================
+
+
+//*****************************************
+//If Heroku connection doesn't work then use local
+
+//===============local config start=================
+// mongoose.connect("mongodb://localhost/scraping" {
+//	useMongoClient: true
+// });
+//************end local config***************8
+
+
+
 var db = mongoose.connection;
 
 // check for error

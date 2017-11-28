@@ -29,18 +29,18 @@ app.use(bodyParser.urlencoded({
 // set the public static directory
 app.use(express.static('public'));
 
-//====================================
-//Database configuration with Mongoose
-//=====================================
-var databaseUri = 'mongodb://localhost/scraping';
-if (process.env.MONGODB_URI) {
-	mongoose.connect(process.env.MONGODB_URI);
-} else {
-	mongoose.connect(databaseUri);
-}
-//=====================================
-//end of database config
-//=====================================
+// //==================================================
+// //Database configuration with Mongoose in connection.js
+// //==================================================
+// var databaseUri = 'mongodb://localhost/scraping';
+// if (process.env.MONGODB_URI) {
+// 	mongoose.connect(process.env.MONGODB_URI);
+// } else {
+// 	mongoose.connect(databaseUri);
+// }
+// //=====================================
+// //end of database config
+// //=====================================
 
 // bring in the routes
 app.use('/', routes);
