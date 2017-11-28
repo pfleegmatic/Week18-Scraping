@@ -29,6 +29,19 @@ app.use(bodyParser.urlencoded({
 // set the public static directory
 app.use(express.static('public'));
 
+//====================================
+//Database configuration with Mongoose
+//=====================================
+var databaseUri = 'mongodb://localhost/scraping';
+if (process.env.MONGODB_URI) {
+	mongoose.connect(process.env.MONGODB_URI);
+} else {
+	mongoose.connect(databaseUri);
+}
+//=====================================
+//end of database config
+//=====================================
+
 // bring in the routes
 app.use('/', routes);
 
@@ -37,3 +50,6 @@ app.use('/', routes);
 app.listen(port, function() {
 	console.log("App running on port:", port);
 });
+
+
+

@@ -1,6 +1,6 @@
 <!-- NavBar -->
 <nav>
-	<div class="nav-wrapper red">
+	<div class="nav-wrapper blue">
 		<a href="#!" class="brand-logo black-text center">Mongo and Scraping</a>
 		<!-- <ul class="right hide-on-med-and-down"> -->
 		<ul class="right">
@@ -23,10 +23,10 @@
 			<div class=row>
 
 				<div class="col s8">
-					<a href="{{this.link}}" class="collection-item red-text" target="_blank">{{this.title}}</a>
+					<a href="{{this.link}}" class="collection-item white-text" target="_blank">{{this.title}}</a>
 				</div>
 				<div class="col s4">
-					<button class="noteButton waves-effect waves-light btn-flat red" id="{{this._id}}">Click Notes</button>
+					<button class="noteButton waves-effect waves-light btn-flat blue" id="{{this._id}}">Click Notes</button>
 				</div>
 
 			</div>
@@ -48,7 +48,7 @@
 	<div class="modal-footer">
         <form name="noteForm" id="noteForm">
                     <input required placeholder="Type a note here!" type="text" name="noteText" id="noteText">
-            <button class="btn red left" type="submit" id="noteButton">
+            <button class="btn blue left" type="submit" id="noteButton">
                 Post Note
             </button>
             <a href="/" class="modal-action modal-close waves-effect waves-light btn-flat">Close</a>
